@@ -86,7 +86,6 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: theme.spacing(2),
         paddingBottom: theme.spacing(2),
         borderRadius: theme.spacing(0),
-        marginRight: theme.spacing(40)
     },
     anchor: {
         paddingLeft: theme.spacing(0),
@@ -105,6 +104,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('sm')]: {
             height: '100%',
+            marginTop: '25%'
         }
     }}));
 
@@ -141,7 +141,7 @@ const About = () => {
                         </Grid>
                         <div style={{borderTop: '1px dashed white',marginTop: theme.spacing(8)}}></div>
                         <Box constainer='div'>
-                                <a href='https://drive.google.com/u/0/uc?id=126dY9tebJmF7OlydFzKVNLIhjhrS3BlE&export=download' className={classes.anchor}><Button variant="contained" className={classes.buttons}><i class="fas fa-download"></i><span style={{paddingLeft: '15px'}}>MY RESUME</span></Button></a>
+                                <a href='https://drive.google.com/u/0/uc?id=126dY9tebJmF7OlydFzKVNLIhjhrS3BlE&export=download' className={classes.anchor}><Button variant="contained" className={classes.buttons}><i class="fas fa-download"></i><span style={{paddingLeft: '15px'}}>RESUME</span></Button></a>
                         </Box>
                     </Grid>
                 </Grid>

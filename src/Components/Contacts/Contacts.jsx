@@ -125,8 +125,8 @@ const Contact = () => {
     }
 
     return (<Box component="div" className={classes.root} id="contact">
-                <Zoom>
                 <Box>
+                <Zoom>
                 <Container className={classes.container}>
                     <form onSubmit={sendEmail}>
                         <Grid container spacing={3} className={classes.grid}>
@@ -150,12 +150,12 @@ const Contact = () => {
                         </Grid>
                     </form>
                 </Container>
+                </Zoom>
                 <Box component='div' className={classes.footer}>
                     <h1 style={{fontFamily: 'Poiret One'}}>Made with <span style={{color: 'red'}}><i class="fas fa-heart"></i></span> by Akarsh</h1>
                     <p><i class="far fa-copyright"></i> All Rights Reserved | 2021</p>
                 </Box>
                 </Box>
-                </Zoom>
             </Box>)
 }
 

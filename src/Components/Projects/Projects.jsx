@@ -50,22 +50,26 @@ const data = [{
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        height: '100vh',
+        height: '100%',
         overflowX: 'hidden',
-        overflowY: 'hidden',
         [theme.breakpoints.down('sm')]: {
-            marginTop: '30rem',
+            marginTop: '0rem',
             height: '100%'
         },
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.up('md')]: {
+            marginTop: '3%',
             height: '100%'
         }
     },
     container: {
+        overflowY: 'hidden',
+        padding: theme.spacing(5),
         flexGrow: 1,
+        [theme.breakpoints.down('md')]: {
+            paddingTop: '10rem',
+        },
         [theme.breakpoints.down('sm')]: {
             paddingTop: '5rem',
-            padding: theme.spacing(4)
         },
         [theme.breakpoints.up('md')]: {
             paddingTop: '7%',

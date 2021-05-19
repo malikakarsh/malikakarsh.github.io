@@ -39,12 +39,12 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         paddingLeft: theme.spacing(20),
-        paddingTop: '10%',
+        paddingTop: '0%',
         
     },
     container: {
         paddingLeft: theme.spacing(0),
-        paddingTop: '9%'
+        paddingTop: '10%'
     },
     header2: {
         fontFamily: 'Poiret One',
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
         height: '32rem',
         [theme.breakpoints.down('sm')]: {
             height: '20rem',
-        }
+        },
     },
     icons: {
         display: 'flex',
@@ -85,7 +85,8 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4),
         paddingTop: theme.spacing(2),
         paddingBottom: theme.spacing(2),
-        borderRadius: theme.spacing(0)
+        borderRadius: theme.spacing(0),
+        marginRight: theme.spacing(40)
     },
     anchor: {
         paddingLeft: theme.spacing(0),
@@ -96,9 +97,12 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         overflowX: 'hidden',
         overflowY: 'hidden',
-        height: '100vh',
+        marginBottom: theme.spacing(5),
         color: 'rgb(247, 247, 247)',
         justifyContent: 'center',
+        [theme.breakpoints.down('lg')]: {
+            height: '100%',
+        },
         [theme.breakpoints.down('sm')]: {
             height: '100%',
         }

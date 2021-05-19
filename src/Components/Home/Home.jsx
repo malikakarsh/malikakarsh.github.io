@@ -30,10 +30,11 @@ const values = ["I'm An ICE Junior", "A Software Developer"];
 
 const useStyles = makeStyles((theme) => ({
     box: {
-        height: '100vh',
+        marginBottom: theme.spacing(4),
+        height: '100%',
         color: 'rgb(247, 247, 247)',
         justifyContent: 'center',
-        overflowX: 'hidden',
+        overflowX: 'hidden'
     },
     header1: {
         paddingTop: theme.spacing(1.5),
@@ -67,21 +68,21 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     divbox: {
-        padding: theme.spacing(8),
-        paddingTop: '20%',
+        overflowY: 'hidden',
+        padding: theme.spacing(10),
+        paddingLeft: theme.spacing(25),
+        paddingRight: theme.spacing(25),
         marginLeft: '0%',
         '@media (min-width:250px)': {
         paddingTop: '40%',
-        padding: theme.spacing(4)
     },
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.down('sm')]: {
         paddingTop: '30%',
-        marginLeft: '0',
+        padding: theme.spacing(4)
     },
 
         [theme.breakpoints.up('md')]: {
         paddingTop: '15%',
-        marginLeft: '10%'
     },
         [theme.breakpoints.up('lg')]: {
         paddingTop: '15%',
@@ -107,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
             color: 'rgb(241, 124, 28)'
         },
         [theme.breakpoints.down('xs')]: {
-        fontSize: '1rem'
+        fontSize: '1.2rem'
     },
         },
     
@@ -120,21 +121,24 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4),
         paddingTop: theme.spacing(2),
         paddingBottom: theme.spacing(2),
-        [theme.breakpoints.up('xs')]: {
+           [theme.breakpoints.down('lg')]: {
+        marginRight: '5%',
+        marginTop: '20%',
+    },
+
+        [theme.breakpoints.down('md')]: {
+        marginRight :'0%',
+        marginTop: '20%',
+    },
+        [theme.breakpoints.down('sm')]: {
+        marginTop: '40%',
+        marginRight: '0%'
+    },
+        [theme.breakpoints.down('xs')]: {
         marginLeft: '40%',
         marginTop: '40%'
     },
-        [theme.breakpoints.up('sm')]: {
-        marginTop: '20%',
-        marginRight: '20%'
-    },
-
-        [theme.breakpoints.up('md')]: {
-        marginRight :'10%'
-    },
-        [theme.breakpoints.up('lg')]: {
-        marginRight: '0'
-    }
+     
     }
 }));
 
@@ -157,7 +161,7 @@ const Home = () => {
     }, []);
     return (
         <Box id='home' className={classes.box}>
-            <Container maxWidth="lg" className={classes.divbox}>
+            <Box component="div" className={classes.divbox}>
             <Fade right delay={3000}>
                 <h4 className={classes.iconTop}>
                         {aboutIcons.map((text) => {
@@ -178,7 +182,7 @@ const Home = () => {
                 <a href="#about" style={{color: 'inherit',textDecoration: 'none'}}><Button variant="contained" style={{backgroundColor: 'rgb(241, 124, 28)',color: 'white'}} className={classes.buttons}><i class="fas fa-angle-double-down" style={{marginRight: theme.spacing(2)}}></i>EXPLORE</Button></a>
             </Fade>
             </Box>
-            </Container>
+            </Box>
         </Box>);
 }
 

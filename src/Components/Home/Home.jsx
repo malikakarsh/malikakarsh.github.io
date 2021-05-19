@@ -11,15 +11,15 @@ import Fade from 'react-reveal/Fade';
 
 const aboutIcons = [{
     icon: "fab fa-github",
-    href: '#'
+    href: 'https://github.com/malikakarsh'
 },
 {
     icon: "fab fa-linkedin-in",
-    href: '#'
+    href: 'https://www.linkedin.com/in/akarsh-malik-911221193/'
 },
 {
     icon: "fab fa-twitter",
-    href: '#'
+    href: 'https://twitter.com/AkarshMalik'
 }]
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
@@ -161,7 +161,7 @@ const Home = () => {
             <Fade right delay={3000}>
                 <h4 className={classes.iconTop}>
                         {aboutIcons.map((text) => {
-                            return <a href={text.href} className={classes.icons}><i className={text.icon}></i></a>
+                            return <a href={text.href} target="_blank" className={classes.icons}><i className={text.icon}></i></a>
                         })}
                 </h4>
             </Fade>

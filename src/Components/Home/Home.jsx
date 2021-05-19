@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
         color: 'rgb(247, 247, 247)',
         justifyContent: 'center',
         overflowX: 'hidden',
+        [theme.breakpoints.down('sm')]: {
+            height: '100vh',
+        },
     },
     header1: {
         paddingTop: theme.spacing(1.5),

@@ -44,7 +44,10 @@ const useStyles = makeStyles((theme) => ({
     },
     container: {
         paddingLeft: theme.spacing(0),
-        paddingTop: '10%'
+        paddingTop: '10%',
+        [theme.breakpoints.down('sm')]: {
+            paddingTop: '0%',
+        },
     },
     header2: {
         fontFamily: 'Poiret One',
@@ -62,6 +65,9 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: theme.spacing(4),
         [theme.breakpoints.down('md')]: {
             paddingRight: theme.spacing(0),
+        },
+        [theme.breakpoints.down('sm')]: {
+            paddingTop: theme.spacing(4),
         }
     },
     desc: {
@@ -105,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('sm')]: {
             height: '100%',
-            marginTop: '30%'
+            marginTop: '0%'
         }
     }}));
 

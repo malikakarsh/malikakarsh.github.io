@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('sm')]: {
             height: '100%',
-            marginTop: '35%'
+            marginTop: '0%'
         }
     }}));
 

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         height: '100%',
         color: 'rgb(247, 247, 247)',
         justifyContent: 'center',
-        overflowX: 'hidden'
+        overflowX: 'hidden',
     },
     header1: {
         paddingTop: theme.spacing(1.5),
@@ -78,8 +78,8 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '40%',
     },
         [theme.breakpoints.down('sm')]: {
-        paddingTop: '30%',
-        padding: theme.spacing(4)
+        padding: theme.spacing(4),
+        paddingTop: '35%',
     },
 
         [theme.breakpoints.up('md')]: {
@@ -109,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
             color: 'rgb(241, 124, 28)'
         },
         [theme.breakpoints.down('xs')]: {
-        fontSize: '1.2rem'
+        fontSize: '1.3rem'
     },
         },
     
@@ -137,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
     },
         [theme.breakpoints.down('xs')]: {
         marginLeft: '40%',
-        marginTop: '65%'
+        marginTop: '55%'
     },
      
     }

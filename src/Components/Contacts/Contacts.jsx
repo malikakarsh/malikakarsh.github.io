@@ -133,7 +133,7 @@ const Contact = () => {
                             <Grid item xs={12} md={5} className={classes.title}>
                                 <h2 className={classes.header2}>Get In Touch</h2>
                             </Grid>
-                            <Grid item xs={12} md={7} style={{backgroundColor: 'rgb(1, 41, 59)',paddingTop: '2%',paddingBottom: '2%'}}>
+                            <Grid item xs={12} md={7} style={{backgroundColor: 'rgb(1, 41, 59)',paddingTop: '2%',paddingBottom: '2%',boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)'}}>
                                 <Grid item xs={12} className={classes.forms}>
                                     <input className={classes.inp} name='name' type="text" placeholder="Name" required></input>
                                 </Grid>

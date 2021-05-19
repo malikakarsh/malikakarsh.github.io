@@ -67,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
     desc: {
     },
     imgs: {
+        marginBottom: theme.spacing(4),
         textAlign: 'center',
         height: '32rem',
         [theme.breakpoints.down('sm')]: {
@@ -104,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down('sm')]: {
             height: '100%',
-            marginTop: '30%'
+            marginTop: '35%'
         }
     }}));
 

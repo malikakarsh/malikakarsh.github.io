@@ -68,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     divbox: {
+        overflowX: 'hidden',
         overflowY: 'hidden',
         padding: theme.spacing(10),
         paddingLeft: theme.spacing(25),
@@ -136,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
     },
         [theme.breakpoints.down('xs')]: {
         marginLeft: '40%',
-        marginTop: '40%'
+        marginTop: '65%'
     },
      
     }

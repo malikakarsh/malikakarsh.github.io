@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
             paddingRight: theme.spacing(0),
         },
         [theme.breakpoints.down('sm')]: {
-            paddingTop: theme.spacing(4),
+            paddingTop: theme.spacing(6),
         }
     },
     desc: {
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         height: '32rem',
         [theme.breakpoints.down('sm')]: {
-            height: '20rem',
+            height: '25rem',
         },
     },
     icons: {

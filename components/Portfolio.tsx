@@ -27,7 +27,7 @@ const mockApiData = {
     roles: "Open to SWE • ML • AI roles"
   },
   fitness: {
-    pace: "5:30 min/km",
+    pace: "4:50 min/km",
     runnerType: "regular runner",
     weekendActivity: "Summit chaser on weekends"
   },

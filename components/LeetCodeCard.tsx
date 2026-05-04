@@ -13,22 +13,30 @@ export interface LeetCodeData {
 
 export default function LeetCodeCard({ data }: { data: LeetCodeData }) {
   return (
-    <a 
+    <a
       href={data.link}
       target="_blank"
       rel="noreferrer"
-      className="group relative overflow-hidden block h-full rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616] via-[#171717] to-[#111111] p-8 text-center shadow-xl shadow-black/25 transition-all duration-300"
+      className="group relative overflow-hidden block h-full rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616]/80 via-[#171717]/80 to-[#111111]/80 backdrop-blur-sm p-8 text-center shadow-xl shadow-black/25 transition-all duration-300"
     >
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
       <div className="absolute top-5 right-5 w-5 h-5">
-        <img 
-          src="https://cdn.simpleicons.org/leetcode/52525b/eab308" 
-          alt="LeetCode Logo" 
-          className="w-full h-full opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:brightness-110 group-hover:saturate-200 group-hover:hue-rotate-20" 
+        <div
+          className="w-full h-full bg-[#52525b] opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:bg-blue-400"
+          style={{
+            maskImage: 'url("https://cdn.simpleicons.org/leetcode")',
+            WebkitMaskImage: 'url("https://cdn.simpleicons.org/leetcode")',
+            maskSize: 'contain',
+            WebkitMaskSize: 'contain',
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+            maskPosition: 'center',
+            WebkitMaskPosition: 'center'
+          }}
         />
       </div>
 
-      <h3 className="text-left self-start text-[10px] font-bold text-zinc-600 uppercase tracking-[0.2em] mb-1">
+      <h3 className="text-left self-start text-[10px] mb-12 font-bold text-zinc-600 uppercase tracking-[0.2em] mb-1">
         LeetCode
       </h3>
 
@@ -36,7 +44,7 @@ export default function LeetCodeCard({ data }: { data: LeetCodeData }) {
         <p className="text-zinc-200 text-[11px] font-medium mb-2 uppercase tracking-widest">
           Max Contest Rating
         </p>
-        <h2 className="text-5xl font-black text-white leading-none tracking-tight group-hover:scale-105 transition-transform duration-300">
+        <h2 className="text-5xl font-black text-white leading-none tracking-tight transition-all duration-300 group-hover:scale-105">
           {data.peakRating}
         </h2>
       </div>
@@ -45,9 +53,9 @@ export default function LeetCodeCard({ data }: { data: LeetCodeData }) {
         <p className="text-zinc-500 text-[10px] uppercase tracking-wider mb-4">
           {data.topPercentage}
         </p>
-        
+
         <div className="flex items-center justify-center gap-10 w-full">
-          
+
           <div className="flex items-center gap-3">
             {data.badgeImage && (
               <Image

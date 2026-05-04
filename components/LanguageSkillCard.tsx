@@ -6,7 +6,7 @@ export interface LanguageItem {
 
 export default function LanguageSkillCard({ title, skills }: { title: string, skills: LanguageItem[] }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616] via-[#171717] to-[#111111] p-6 h-full flex flex-col justify-center shadow-xl shadow-black/25 transition-all duration-300">
+    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616]/80 via-[#171717]/80 to-[#111111]/80 backdrop-blur-sm p-6 h-full flex flex-col justify-center shadow-xl shadow-black/25 transition-all duration-300">
       <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
       <h3 className="text-[10px] font-bold text-zinc-600 uppercase tracking-[0.2em] mb-4">
         {title}

@@ -8,7 +8,7 @@ export interface EducationItem {
 
 export default function RowEducationCard({ data }: { data: EducationItem }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616] via-[#171717] to-[#111111] p-8 flex flex-col justify-center shadow-xl shadow-black/25 transition-all duration-300">
+    <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616]/80 via-[#171717]/80 to-[#111111]/80 backdrop-blur-sm p-8 flex flex-col justify-center shadow-xl shadow-black/25 transition-all duration-300">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
       <div className="flex flex-col md:flex-row justify-between md:items-start mb-3">
         

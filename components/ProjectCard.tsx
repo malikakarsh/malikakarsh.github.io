@@ -7,13 +7,13 @@ export interface ProjectItem {
 
 export default function ProjectCard({ data }: { data: ProjectItem }) {
   return (
-    <a 
-      href={data.link} 
-      target="_blank" 
+    <a
+      href={data.link}
+      target="_blank"
       rel="noreferrer"
-      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616] via-[#171717] to-[#111111] p-6 flex flex-col h-full shadow-xl shadow-black/25 transition-all duration-300 hover:shadow-black/30"
+      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616]/80 via-[#171717]/80 to-[#111111]/80 backdrop-blur-sm p-6 flex flex-col h-full shadow-xl shadow-black/25 transition-all duration-300 hover:shadow-black/30"
     >
-      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-21 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
       <div className="flex justify-between items-start mb-9">
         <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
           {data.title}
@@ -25,14 +25,14 @@ export default function ProjectCard({ data }: { data: ProjectItem }) {
         </div>
       </div>
 
-      <p className="text-zinc-400 text-sm leading-relaxed mb-7 flex-1">
+      <p className="text-zinc-400 text-sm leading-relaxed mb-8 flex-1">
         {data.desc}
       </p>
 
       <div className="flex flex-wrap gap-2 mt-auto">
         {data.tech.map((tag, i) => (
-          <span 
-            key={i} 
+          <span
+            key={i}
             className="bg-zinc-800/40 text-zinc-300 text-[10px] font-medium px-2 py-1 rounded-md border border-zinc-700/50"
           >
             {tag}

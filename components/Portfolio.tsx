@@ -12,7 +12,7 @@ import LanguageSkillCard from './LanguageSkillCard';
 import { motion } from 'framer-motion';
 import { Variants } from 'framer-motion';
 import ProjectCard from './ProjectCard';
-
+import ConstellationBackground from './ConstellationBackground';
 
 const mockApiData = {
   profile: {
@@ -27,14 +27,13 @@ const mockApiData = {
     roles: "Open to SWE • ML • AI roles"
   },
   fitness: {
-    pace: "5:30 min/km", 
+    pace: "5:30 min/km",
     runnerType: "regular runner",
     weekendActivity: "Summit chaser on weekends"
   },
   about: {
     paragraphs: [
-      "I ship. Backend systems, AI pipelines, data platforms — if it needs to be fast, reliable, and smart, that's my lane.",
-      "Agentic AI and LLM pipelines on one end, clean APIs and distributed systems on the other. Top 5% on LeetCode somewhere in between."
+      "I specialize in the intersection of distributed systems and Agentic AI. My work usually involves bridging the gap between low-latency backend architecture and scalable LLM orchestration. Whether I’m optimizing data pipelines or solving algorithmic challenges, I focus on building systems that are as resilient as they are intelligent."
     ],
     tags: ["Agentic AI", "LLM Orchestration", "Distributed Systems", "MLOps"]
   },
@@ -85,40 +84,40 @@ const mockApiData = {
   ],
   projects: [
     {
-      title: "F1 Data Observatory",
-      desc: "Developed an interactive visualization dashboard analyzing Formula 1 dominance gaps and safety trends across eras using 6 distinct charts.",
-      tech: ["D3.js", "Observable", "JavaScript", "Data Normalization"],
-      link: "https://github.com/malikakarsh/f1-data-observatory"
+      title: "UrbanIntel",
+      desc: "A graph-based AI for NYC property analysis. It orchestrates agents to synthesize geocoding, safety, and regulatory data into automated urban investigations.",
+      tech: ["LangGraph", "LangChain", "Ollama", "Python"],
+      link: "https://github.com/malikakarsh/UrbanIntel"
     },
     {
-      title: "Causal Inference Engine",
-      desc: "Analyzed the MedFit-1k fitness dataset using Directed Acyclic Graphs (DAGs) to discover Average Treatment Effects for exercise interventions.",
-      tech: ["Python", "PyMC", "Pandas", "Causal Inference"],
-      link: "https://github.com/malikakarsh/causal-inference"
+      title: "SnapIndex",
+      desc: "A Python-based semantic search engine. It modernizes local file management, replacing traditional keywords with intelligent, context-aware indexing.",
+      tech: ["Python", "LangGraph", "FAISS"],
+      link: "https://github.com/SnapIndex/SnapIndex"
     },
     {
-      title: "Distributed JezzBall",
-      desc: "Engineered a multiplayer, Java-based version of the classic JezzBall game utilizing a custom server-client architecture and synchronized state.",
-      tech: ["Java", "Sockets", "Multithreading", "Client-Server Architecture"],
-      link: "https://github.com/malikakarsh/distributed-jezzball"
+      title: "Pragyan Premiere League",
+      desc: "A real-time fantasy cricket platform for NIT Trichy. Users draft 11-player squads for simulated matches and friendly challenges on a live leaderboard.",
+      tech: ["Golang", "Websockets", "React.js"],
+      link: "https://delta.nitt.edu/projects/pragyan-premiere-league"
     },
     {
-      title: "F1 Data Observatory",
-      desc: "Developed an interactive visualization dashboard analyzing Formula 1 dominance gaps and safety trends across eras using 6 distinct charts.",
-      tech: ["D3.js", "Observable", "JavaScript", "Data Normalization"],
-      link: "https://github.com/malikakarsh/f1-data-observatory"
+      title: "Paddy Seed Classification",
+      desc: "Seed classification and feature extraction (CST, dimensions). It employs CNNs and transfer learning for real-time classification of seed varieties.",
+      tech: ["CNN", "Transfer Learning", "Tensorflow", "Computer Vision"],
+      link: "https://github.com/malikakarsh/paddy-seed-classification"
     },
     {
-      title: "Causal Inference Engine",
-      desc: "Analyzed the MedFit-1k fitness dataset using Directed Acyclic Graphs (DAGs) to discover Average Treatment Effects for exercise interventions.",
-      tech: ["Python", "PyMC", "Pandas", "Causal Inference"],
-      link: "https://github.com/malikakarsh/causal-inference"
+      title: "Pragyan Capture The Flag",
+      desc: "An ethical hacking contest where participants exploit software vulnerabilities to retrieve hidden `flags` testing real-world penetration testing and security skills.",
+      tech: ["Docker", "Kubernetes", "CTFd", "C++"],
+      link: "https://delta.nitt.edu/projects/pctf"
     },
     {
-      title: "Distributed JezzBall",
-      desc: "Engineered a multiplayer, Java-based version of the classic JezzBall game utilizing a custom server-client architecture and synchronized state.",
-      tech: ["Java", "Sockets", "Multithreading", "Client-Server Architecture"],
-      link: "https://github.com/malikakarsh/distributed-jezzball"
+      title: "Extract",
+      desc: "A simplified OCR engine modeled after Tesseract. It extracts uppercase text from images and converts it into plain text.",
+      tech: ["Python", "OpenCV", "NumPy", "Tesseract"],
+      link: "https://github.com/malikakarsh/extract"
     }
   ]
 };
@@ -131,36 +130,37 @@ export default function Portfolio() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.35, 
+        staggerChildren: 0.35,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: -20 }, 
-    show: { 
-      opacity: 1, 
-      y: 0, 
+    hidden: { opacity: 0, y: -20 },
+    show: {
+      opacity: 1,
+      y: 0,
       transition: { type: "spring" as const, stiffness: 300, damping: 24 }
     },
   };
 
   return (
-    <div className="dark bg-main-bg lg:h-screen lg:overflow-hidden text-zinc-300 p-4 lg:p-6 font-sans flex items-center justify-center">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
+    <div className="dark bg-main-bg lg:h-screen lg:overflow-hidden text-zinc-300 p-4 lg:p-6 font-sans flex items-center justify-center relative">
+      <ConstellationBackground />
+      <div className="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 relative z-10">
 
         <div className="lg:col-span-3 h-fit lg:sticky lg:top-8">
           <Sidebar data={mockApiData.profile} activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
 
         <div className="lg:col-span-9 flex flex-col gap-4 h-full">
-          
-      
+
+
           {activeTab === 'about' && (
-            <motion.div 
-              variants={containerVariants} 
-              initial="hidden" 
-              animate="show" 
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
               className="flex flex-col gap-4 h-full"
             >
               <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -174,58 +174,58 @@ export default function Portfolio() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1">
                 <motion.div variants={itemVariants}>
-                    <ExperienceCard data={mockApiData.experience} />
+                  <ExperienceCard data={mockApiData.experience} />
                 </motion.div>
                 <motion.div variants={itemVariants}>
-                    <LeetCodeCard data={mockApiData.leetcode} />
+                  <LeetCodeCard data={mockApiData.leetcode} />
                 </motion.div>
               </div>
             </motion.div>
           )}
 
           {activeTab === 'background' && (
-            <motion.div 
-              variants={containerVariants} 
-              initial="hidden" 
-              animate="show" 
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
               className="flex flex-col gap-4 h-full"
             >
               <motion.div variants={itemVariants}>
                 <RowEducationCard data={mockApiData.education[0]} />
               </motion.div>
-              
+
               <motion.div variants={itemVariants}>
                 <RowEducationCard data={mockApiData.education[1]} />
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1">
                 <motion.div variants={itemVariants}>
-                    <LanguageSkillCard title="Programming Languages" skills={mockApiData.languages} />
+                  <LanguageSkillCard title="Programming Languages" skills={mockApiData.languages} />
                 </motion.div>
-                <motion.div variants={itemVariants}> 
-                <SkillGridCard title="Tech Stacks" skills={mockApiData.techStacks} />
+                <motion.div variants={itemVariants}>
+                  <SkillGridCard title="Tech Stacks" skills={mockApiData.techStacks} />
                 </motion.div>
               </div>
             </motion.div>
           )}
 
           {activeTab === 'projects' && (
-            <motion.div 
-              variants={containerVariants} 
-              initial="hidden" 
-              animate="show" 
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
               className="flex flex-col gap-4 h-full"
             >
               {/* The grid forces 2 columns on desktop automatically */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full content-start">
-                
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full content-center">
+
                 {/* Dynamically map through all projects */}
                 {mockApiData.projects.map((project, index) => (
                   <motion.div key={index} variants={itemVariants} className="h-full">
                     <ProjectCard data={project} />
                   </motion.div>
                 ))}
-                
+
               </div>
             </motion.div>
           )}

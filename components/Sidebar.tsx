@@ -23,7 +23,7 @@ export default function Sidebar({ data, activeTab, setActiveTab }: SidebarProps)
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#161616]/80 via-[#171717]/80 to-[#111111]/80 backdrop-blur-sm p-6 flex flex-col items-center text-center shadow-xl shadow-black/25 transition-all duration-300">
         <div className="absolute inset-x-0 top-0 h-25 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
         <div className="relative z-10 w-34 h-34 rounded-full flex items-center justify-center mb-4 shadow-lg overflow-hidden border-2 border-white/10">
-          <Image src="/profile4.png" alt="Profile" fill className="object-cover" />
+          <Image src="/profile.png" alt="Profile" fill className="object-cover" />
         </div>
         <h1 className="text-2xl font-bold text-white">{data.name}</h1>
         <p className="text-zinc-500 text-sm mt-1">{data.title}</p>

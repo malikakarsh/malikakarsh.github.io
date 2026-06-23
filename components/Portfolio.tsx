@@ -27,7 +27,7 @@ const mockApiData = {
     roles: "Open to SWE • ML • AI roles"
   },
   fitness: {
-    pace: "5:30 min/km",
+    pace: "4:50 min/km",
     runnerType: "regular runner",
     weekendActivity: "Summit chaser on weekends"
   },
@@ -43,14 +43,14 @@ const mockApiData = {
     { role: "Full Stack Intern", company: "Quantale", duration: "Sep - Nov 2021", active: false }
   ],
   leetcode: {
-    currentRating: "1,873",
-    peakRating: "1,893",
+    currentRating: "1,963",
+    peakRating: "1,963",
     level: "Knight",
-    globalRanking: "43,797",
-    topPercentage: "Top 5% World Wide",
+    globalRanking: "26,298",
+    topPercentage: "Top 3.12% World Wide",
     badgeImage: "/knight.png",
-    totalUsers: "871,853",
-    attended: 63,
+    totalUsers: "874,367",
+    attended: 70,
     link: "https://leetcode.com/u/malikakarsh/"
   },
   education: [
@@ -58,7 +58,7 @@ const mockApiData = {
       university: "New York University",
       degree: "Master of Science in Computer Science",
       duration: "Sep 2025 - May 2027",
-      gpa: "4/4",
+      gpa: "3.88/4",
       coursework: ["Design and Analysis of Algorithms", "Information Visualization", "Foundations of Data Science"]
     },
     {

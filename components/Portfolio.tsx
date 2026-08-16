@@ -47,10 +47,10 @@ const mockApiData = {
     currentRating: "1,963",
     peakRating: "1,963",
     level: "Knight",
-    globalRanking: "26,298",
+    globalRanking: "27,015",
     topPercentage: "Top 3.12% World Wide",
     badgeImage: "/knight.png",
-    totalUsers: "874,367",
+    totalUsers: "878,193",
     attended: 70,
     link: "https://leetcode.com/u/malikakarsh/"
   },

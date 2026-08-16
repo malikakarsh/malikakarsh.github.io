@@ -13,6 +13,7 @@ import { motion } from 'framer-motion';
 import { Variants } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import ConstellationBackground from './ConstellationBackground';
+import FitToScreen from './FitToScreen';
 
 const mockApiData = {
   profile: {
@@ -84,6 +85,12 @@ const mockApiData = {
   ],
   projects: [
     {
+      title: "Weave",
+      desc: "Turn a CSV file and a plain-English prompt into an interactive D3.js chart - no code required. Supports 16 chart types with interactive sliders and filters.",
+      tech: ["Python", "D3.js", "Next"],
+      link: "https://github.com/malikakarsh/weave"
+    },
+    {
       title: "UrbanIntel",
       desc: "A graph-based AI for NYC property analysis. It orchestrates agents to synthesize geocoding, safety, and regulatory data into automated urban investigations.",
       tech: ["LangGraph", "LangChain", "Ollama", "Python"],
@@ -112,12 +119,6 @@ const mockApiData = {
       desc: "An ethical hacking contest where participants exploit software vulnerabilities to retrieve hidden `flags` testing real-world penetration testing and security skills.",
       tech: ["Docker", "Kubernetes", "CTFd", "C++"],
       link: "https://delta.nitt.edu/projects/pctf"
-    },
-    {
-      title: "Extract",
-      desc: "A simplified OCR engine modeled after Tesseract. It extracts uppercase text from images and converts it into plain text.",
-      tech: ["Python", "OpenCV", "NumPy", "Tesseract"],
-      link: "https://github.com/malikakarsh/extract"
     }
   ]
 };
@@ -147,6 +148,7 @@ export default function Portfolio() {
   return (
     <div className="dark bg-main-bg lg:h-screen lg:overflow-hidden text-zinc-300 p-4 lg:p-6 font-sans flex items-center justify-center relative">
       <ConstellationBackground />
+      <FitToScreen>
       <div className="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 relative z-10">
 
         <div className="lg:col-span-3 h-fit lg:sticky lg:top-8">
@@ -232,6 +234,7 @@ export default function Portfolio() {
 
         </div>
       </div>
+      </FitToScreen>
     </div>
   );
 }

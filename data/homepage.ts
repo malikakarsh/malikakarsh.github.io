@@ -43,7 +43,7 @@ export const homeContent = {
         href: "#about",
       },
       {
-        value: "GPU / ML systems",
+        value: "GPU / ML Systems",
         suffix: "",
         label: "Triton · PyTorch · Performance",
         href: "#fastinfer",
@@ -125,7 +125,6 @@ export const homeContent = {
     rating: "1963",
     ratingLabel: "PEAK CONTEST RATING",
     ranking: "Top 3.22% worldwide",
-    footnote: "Peak rating from my LeetCode profile.",
     badge: "/knight.png",
     cta: { label: "View LeetCode profile", href: links.leetcode },
   },
@@ -164,7 +163,7 @@ export const homeContent = {
     ],
     offClock: {
       label: "OFF THE CLOCK",
-      lines: ["Regular runner. 4:50 min/km.", "Summit chaser on weekends."],
+      lines: ["Running (4:50 min/km) · Hiking · Systems rabbit holes"],
     },
     cta: { label: "Let’s talk", href: links.email },
   },
@@ -203,7 +202,7 @@ export const siteChrome = {
     { label: "LinkedIn", href: links.linkedin },
   ],
   footer: {
-    tagline: "Software engineer · New York",
+    tagline: "Software Engineer · New York",
     name: "Akarsh Malik",
     links: [
       { label: "Email", href: links.email },

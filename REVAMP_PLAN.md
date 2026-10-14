@@ -115,3 +115,10 @@ Run production build, TypeScript and lint. Verify the homepage at 375, 430, tabl
 - Removed the portrait saturation filter so the user-supplied photo displays with original colors. Footer bottom padding increased 15%, from 32px to 36.8px, with top padding unchanged.
 
 - Footer bottom padding updated to an explicit 50px per the final user correction; top padding remains 32px.
+
+### Content, navigation, and cross-platform link refinement
+- All external-link indicators share a small currentColor SVG northeast arrow, replacing Unicode arrows in rendered source. Inline-flex text/icon grouping uses a 6px gap, fixed 11px SVG, and preserves title wrapping without leaving the icon on its own line.
+- Main and mobile navigation share a scroll-aware pale-green active state and aria-current location. Tracks passive scrolling with a requestAnimationFrame throttle; handles the shorter final Education section at page end. Native anchor scrolling/reduced motion retained.
+- Removed the redundant peak-rating footnote. Delta Force title increased to 18px and responsibility labels to 12px, without adding content. About retains running pace alongside Hiking and Systems rabbit holes in one compact personal line. GPU / ML Systems and Software Engineer capitalization standardized.
+- Chrome checks passed at 1440, 768 and 375px for all 17 external links, inline project icons, active navigation on each section, manual scrolling, mobile-menu closing, and zero axe violations. Safari/iPad device testing was not available; SVG removes Unicode emoji selection entirely.
+- Inspected ambient-glow animation phases and a 65%-brightness capture: text stays above illumination with clear contrast; no animation redesign needed.

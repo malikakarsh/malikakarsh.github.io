@@ -5,7 +5,9 @@ import SiteLink from "./SiteLink";
 export default function MobileNavigation({
   navigation,
   socialLinks,
+  activeHref,
 }: {
+  activeHref?: string;
   navigation: { label: string; href: string }[];
   socialLinks: { label: string; href: string }[];
 }) {
@@ -23,7 +25,11 @@ export default function MobileNavigation({
         }}
       >
         {[...navigation, ...socialLinks].map((link) => (
-          <SiteLink href={link.href} key={link.label}>
+          <SiteLink
+            href={link.href}
+            key={link.label}
+            aria-current={activeHref === link.href ? "location" : undefined}
+          >
             {link.label}
           </SiteLink>
         ))}

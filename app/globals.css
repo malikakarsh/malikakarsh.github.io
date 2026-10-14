@@ -710,11 +710,6 @@ a:hover {
   font-size: 23px;
   letter-spacing: -0.03em;
 }
-.project-row h3 span {
-  font-size: 17px;
-  color: var(--accent);
-  margin-left: 6px;
-}
 .project-row p {
   font-size: 12px;
   color: var(--muted);
@@ -789,12 +784,6 @@ a:hover {
 .rating-panel > .eyebrow {
   color: var(--muted);
   margin-top: 8px;
-}
-.rating-footnote {
-  display: block;
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 22px;
 }
 .notes-preview {
   margin-top: 35px;
@@ -1370,10 +1359,7 @@ a:hover {
   .rating-panel > strong {
     font-size: 76px;
   }
-  .rating-footnote {
-    margin-top: 16px;
-  }
-  .notes-preview {
+    .notes-preview {
     grid-template-columns: 30px 1fr;
     gap: 16px;
     margin-top: 26px;
@@ -2361,7 +2347,7 @@ a:hover {
   margin-bottom: 10px;
 }
 .student-organization h4 {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
 }
 .student-organization .organization-meta {
@@ -2376,7 +2362,7 @@ a:hover {
   list-style: none;
   padding: 0;
   margin: 10px 0 0;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.6;
 }
 .organization-description {
@@ -2681,4 +2667,38 @@ a:hover {
 }
 .featured-grid > .benchmark .benchmark-result > span {
   max-width: none;
+}
+
+.external-arrow {
+  display: inline-block;
+  vertical-align: -0.08em;
+  flex-shrink: 0;
+}
+.desktop-nav a[aria-current="location"],
+.mobile-nav a[aria-current="location"] {
+  color: var(--accent);
+}
+
+.external-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+}
+.external-text-link > .external-link-label {
+  min-width: 0;
+}
+.external-text-link > .external-arrow {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+}
+
+.benchmark figcaption a.external-text-link,
+.hero-performance figcaption a.external-text-link {
+  display: flex;
+  width: fit-content;
+}
+.mobile-nav nav > a.external-text-link {
+  display: flex;
 }

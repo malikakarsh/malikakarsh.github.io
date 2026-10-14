@@ -1,3 +1,4 @@
+import ExternalArrow from "./ExternalArrow";
 import type { ComponentProps } from "react";
 
 export function isExternalWebsite(href: string) {
@@ -19,16 +20,22 @@ export default function SiteLink({
   return (
     <a
       {...props}
+      className={
+        [props.className, external && indicator ? "external-text-link" : undefined]
+          .filter(Boolean)
+          .join(" ") || undefined
+      }
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
     >
-      {children}
-      {external && indicator && (
+      {external && indicator ? (
         <>
-          {" "}
-          <span aria-hidden="true">↗</span>
+          <span className="external-link-label">{children}</span>
+          <ExternalArrow />
         </>
+      ) : (
+        children
       )}
     </a>
   );

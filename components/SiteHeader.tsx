@@ -1,4 +1,4 @@
-import MobileNavigation from "./MobileNavigation";
+import HeaderNavigation from "./HeaderNavigation";
 import SiteLink from "./SiteLink";
 import { siteChrome, homeContent, homeSections } from "@/data/homepage";
 const enabledIds = new Set(
@@ -21,21 +21,7 @@ export default function SiteHeader() {
         >
           am<span>.</span>
         </SiteLink>
-        <nav className="desktop-nav" aria-label="Main navigation">
-          {navigation.map((item) => (
-            <SiteLink key={item.href} href={item.href}>
-              {item.label}
-            </SiteLink>
-          ))}
-        </nav>
-        <div className="header-socials">
-          {siteChrome.socialLinks.map((link) => (
-            <SiteLink href={link.href} key={link.label}>
-              {link.label}
-            </SiteLink>
-          ))}
-        </div>
-        <MobileNavigation
+        <HeaderNavigation
           navigation={navigation}
           socialLinks={siteChrome.socialLinks}
         />

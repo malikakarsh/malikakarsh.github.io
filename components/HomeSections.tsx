@@ -1,3 +1,4 @@
+import ExternalArrow from "./ExternalArrow";
 import TechnicalActivities from "./TechnicalActivities";
 import BenchmarkGrid from "./BenchmarkGrid";
 import SiteLink from "./SiteLink";
@@ -304,7 +305,6 @@ export function Algorithms({ content: c }: { content: Content<"algorithms"> }) {
         <strong>{c.rating}</strong>
         <p className="eyebrow">{c.ratingLabel}</p>
         <p className="rating-ranking">{c.ranking}</p>
-        <span className="rating-footnote">{c.footnote}</span>
       </div>
     </section>
   );
@@ -323,7 +323,7 @@ export function EngineeringNotes({
       {c.entries.map((note) => (
         <div className="notes-preview" key={note.title}>
           <span className="note-glyph" aria-hidden="true">
-            [ ↗ ]
+            <ExternalArrow />
           </span>
           <div>
             <h3>{note.title}</h3>

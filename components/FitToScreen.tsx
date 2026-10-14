@@ -5,8 +5,8 @@ import { useLayoutEffect, useRef, useState, ReactNode } from 'react';
  * Scales its content down to fit the viewport height on large screens.
  *
  * On a tall desktop display the scale stays 1 (no visual change). On a short
- * screen — e.g. a 13" MacBook Air where the layout would otherwise be clipped
- * by the `lg:h-screen lg:overflow-hidden` container — the content is uniformly
+ * screen - e.g. a 13" MacBook Air where the layout would otherwise be clipped
+ * by the `lg:h-screen lg:overflow-hidden` container - the content is uniformly
  * scaled down just enough to fit, so nothing gets cut off and no scroll is
  * needed. Below the `lg` breakpoint the layout scrolls normally (scale 1).
  */

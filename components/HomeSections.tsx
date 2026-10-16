@@ -7,6 +7,8 @@ import type { CSSProperties } from "react";
 import { homeContent, HomeSectionKey } from "@/data/homepage";
 import { links } from "@/data/portfolio";
 import BenchmarkFigure from "./BenchmarkFigure";
+import HeroBackground from "./HeroBackground";
+import { heroVariant } from "@/data/hero-variant";
 
 type Content<K extends HomeSectionKey> = (typeof homeContent)[K];
 function SectionHeading({
@@ -70,7 +72,8 @@ function ProjectRow({
 }
 export function Hero({ content: c }: { content: Content<"hero"> }) {
   return (
-    <section className="hero" id={c.id} aria-labelledby={`${c.id}-title`}>
+    <section className="hero" id={c.id} aria-labelledby={`${c.id}-title`} data-hero-variant={heroVariant}>
+      <HeroBackground variant={heroVariant} />
       <div className="hero-topline">
         <p className="eyebrow">
           {c.name} <span>{c.role}</span>

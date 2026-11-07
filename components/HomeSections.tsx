@@ -9,6 +9,7 @@ import { links } from "@/data/portfolio";
 import BenchmarkFigure from "./BenchmarkFigure";
 import HeroBackground from "./HeroBackground";
 import { heroVariant } from "@/data/hero-variant";
+import GPUKernelLab from "./gpu-lab/GPUKernelLab";
 
 type Content<K extends HomeSectionKey> = (typeof homeContent)[K];
 function SectionHeading({
@@ -71,6 +72,16 @@ function ProjectRow({
   );
 }
 export function Hero({ content: c }: { content: Content<"hero"> }) {
+  const performance = (
+    <div className="hero-performance">
+      {heroVariant !== "gpu-lab" && <BenchmarkGrid />}
+      <div className="performance-project">
+        <h2>{c.performance.title}</h2>
+        <p>{c.performance.subtitle}</p>
+      </div>
+      <BenchmarkFigure benchmark={c.performance.benchmark} />
+    </div>
+  );
   return (
     <section className="hero" id={c.id} aria-labelledby={`${c.id}-title`} data-hero-variant={heroVariant}>
       <HeroBackground variant={heroVariant} />
@@ -107,14 +118,7 @@ export function Hero({ content: c }: { content: Content<"hero"> }) {
             </SiteLink>
           </div>
         </div>
-        <div className="hero-performance">
-          <BenchmarkGrid />
-          <div className="performance-project">
-            <h2>{c.performance.title}</h2>
-            <p>{c.performance.subtitle}</p>
-          </div>
-          <BenchmarkFigure benchmark={c.performance.benchmark} />
-        </div>
+        {heroVariant === "gpu-lab" ? <GPUKernelLab benchmark={c.performance.benchmark}>{performance}</GPUKernelLab> : performance}
       </div>
       <div className="credibility" aria-label="Profile highlights">
         {c.metrics.map((metric) => (

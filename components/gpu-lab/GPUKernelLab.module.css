@@ -1,0 +1,90 @@
+.lab {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 480px;
+  min-width: 0;
+  max-width: 484px;
+  justify-self: end;
+}
+:global([data-gpu-ready]) .surfaceFallback { visibility: hidden; }
+.instrument {
+  position: absolute;
+  z-index: 2;
+  width: 318px;
+  right: 0;
+  bottom: 4px;
+  padding: 18px 20px 0;
+  background: linear-gradient(125deg,#15231bcc,#0d1712dc);
+  border: 1px solid #b4d5b532;
+  border-radius: 7px;
+  box-shadow: 0 12px 44px #0005, 0 -1px 0 #d5f6c70a, 0 0 25px rgb(131 184 127 / calc(var(--completion) * .07));
+  backdrop-filter: blur(16px);
+}
+.instrument::before { content: ''; position: absolute; inset: -1px; pointer-events: none; border: 1px solid #c9efb3; border-radius: 7px; opacity: calc(var(--completion) * .3); }
+.heading { display: flex; justify-content: space-between; align-items: center; }
+.heading h2 { font-size: 17px; font-weight: 500; letter-spacing: -.03em; }
+.heading > span { display: flex; align-items: center; gap: 5px; font: 8px var(--font-geist-mono),monospace; color: #a1b6a5; }
+.heading i { width: 3px; height: 3px; border-radius: 50%; background: #bad7ad; }
+.result { display: flex; flex-direction: column; margin-top: 12px; gap: 3px; }
+.result strong { font-size: 30px; line-height: 1.2; font-weight: 500; letter-spacing: -.055em; color: #c2e5ae; text-shadow: 0 0 calc(var(--completion) * 20px) #c3ed9c35; white-space: nowrap; }
+.result > span { font-size: 10px; color: #b0bfb2; }
+.latencies { display: grid; gap: 7px; margin-top: 15px; font: 9px var(--font-geist-mono),monospace; color: #85968a; }
+.latencies > span { display: flex; justify-content: space-between; gap: 8px; }
+.latencies b { font-weight: 400; color: #bbc7bc; }
+.latencies > span:last-child b { color: #bfdfaa; filter: brightness(calc(1 + var(--completion) * .3)); }
+.details { margin-top: 14px; border-top: 1px solid #b5d5b51a; }
+.details summary { list-style: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 9px; color: #a7b9ab; padding: 11px 0; }
+.details summary::-webkit-details-marker { display: none; }
+.details summary:hover { color: #d6edc7; }
+.details summary:focus-visible { outline: 1px solid #bce6ac; outline-offset: 3px; }
+.full { position: absolute; inset: auto -1px -1px auto; width: 420px; max-width: calc(100vw - 36px); max-height: 435px; overflow-y: auto; border: 1px solid #7c9d7e66; border-radius: 6px; background: #101a14fa; box-shadow: 0 20px 60px #000a; z-index: 3; padding-bottom: 12px; }
+/* Keep the open summary above the expanded measurements as a close control. */
+.details[open] summary { position: relative; z-index: 4; color: #c2e5ae; }
+.details[open] summary span { transform: rotate(180deg); }
+.details[open] .full { bottom: 38px; }
+.lab :global(.hero-performance) { width: 100%; max-width: none; border: none; background: none; box-shadow: none; }
+.lab :global(.hero-performance .performance-project) { padding: 20px 22px 0; }
+.lab :global(.hero-performance .benchmark) { padding: 18px 22px 12px; }
+.lab :global(.hero-performance .benchmark h3) { font-size: 14px; }
+.lab :global(.hero-performance .benchmark-result strong) { font-size: 31px; }
+.lab :global(.hero-performance .candidate::after) { animation: none; opacity: 0; }
+@media (max-width: 1000px) and (min-width: 761px) {
+  .lab { height: 440px; }
+  .instrument { width: min(100%,300px); padding-inline: 16px; }
+  .result strong { font-size: 28px; }
+}
+@media (max-width: 760px) {
+  .lab { height: auto; max-width: none; justify-self: stretch; }
+  .instrument { position: relative; width: 100%; bottom: auto; right: auto; padding: 18px 20px 0; }
+  .result { margin-top: 9px; }
+  .result strong { font-size: 28px; }
+  .latencies { margin-top: 12px; }
+  .full { max-height: 405px; }
+}
+
+.environment {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  mask-image:
+    linear-gradient(to bottom, black 82%, transparent 100%),
+    linear-gradient(to right, black calc(var(--scene-right, 100vw) - 64px), transparent var(--scene-right, 100vw));
+  mask-composite: intersect;
+}
+
+.readability {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 32% 48% at 24% 48%, #0c100d99 0%, #0c100d55 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 82%, transparent);
+}
+.surfaceFallback { height: calc(100% - 100px); }
+@media (max-width: 760px) {
+  .readability { background: radial-gradient(ellipse at 38% 25%, #0c100dc9, #0c100d66 30%, transparent 64%); }
+}

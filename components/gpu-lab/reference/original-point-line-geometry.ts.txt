@@ -1,0 +1,38 @@
+Recovery source: the first createScene implementation written in this conversation,
+before the solid-cube experiment. No Git revision contains this source. These are
+the original geometry generation and point/line rendering fragments, preserved
+verbatim from that implementation, not inferred from a screenshot.
+
+  function geometry(compact:boolean){
+    if(tensor){gl!.deleteBuffer(tensor);buffers.splice(buffers.indexOf(tensor),1);}if(fibers){gl!.deleteBuffer(fibers);buffers.splice(buffers.indexOf(fibers),1);}
+    const cells:number[]=[],connections:number[]=[];
+    const nx=compact?16:22,ny=compact?7:10,nz=compact?6:8;
+    for(let z=0;z<nz;z++)for(let y=0;y<ny;y++)for(let x=0;x<nx;x++){
+      const px=(x/(nx-1)-.5)*3.6,py=(y/(ny-1)-.5)*1.65,pz=(z/(nz-1)-.5)*1.44;
+      const seed=((x*13+y*7+z*3)%17)/17;
+      cells.push(px,py,pz,seed);
+      // Fibers expose the depth and continuity of the tensor, without bounding boxes.
+      if(x<nx-1 && y%3===0 && z%2===0) connections.push(px,py,pz,seed,px+3.6/(nx-1),py,pz,seed);
+      if(z<nz-1 && x%5===0 && y%3===0) connections.push(px,py,pz,seed,px,py,pz+1.44/(nz-1),seed);
+    }
+    tensor=buffer(cells);fibers=buffer(connections);count=cells.length/4;lineCount=connections.length/4;
+  }
+
+const pointFragment = `precision mediump float;varying float energy;varying float depth;varying float size;
+void main(){
+ vec2 p=gl_PointCoord-.5;
+ // Small optical cells with a bright core and a softly scattered edge.
+ float d=length(p*vec2(1.,1.22));
+ float core=1.-smoothstep(.18,.43,d);
+ float halo=exp(-d*d*9.)*.23;
+ float alpha=(core+halo)*(.21+energy*.85)*(.45+depth*.55);
+ vec3 color=mix(vec3(.19,.43,.32),vec3(.82,.96,.68),smoothstep(.2,1.,energy));
+ gl_FragColor=vec4(color*alpha,alpha);
+}`;
+const lineFragment = `precision mediump float;varying float energy;varying float depth;varying float size;
+void main(){float a=(.015+energy*.095)*(.4+depth*.6);gl_FragColor=vec4(vec3(.38,.67,.45)*a,a);}`;
+
+      gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);
+      for(const [p,b,mode,total] of [[lines,fibers,gl.LINES,lineCount],[points,tensor,gl.POINTS,count]] as const){
+        gl.useProgram(p);u=uniforms.get(p)!;gl.uniform1f(u.time,time);gl.uniform1f(u.phase,state.t);gl.uniform1f(u.ratio,ratio);gl.uniform1f(u.aspect,width/height);gl.uniform1f(u.completion,state.completion);gl.uniform2f(u.pointer,pointer.x,pointer.y);attributes(p,b);gl.drawArrays(mode,0,total);
+      }

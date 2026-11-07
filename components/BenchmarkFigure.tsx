@@ -1,3 +1,4 @@
+import styles from "./BenchmarkFigure.module.css";
 import BenchmarkGrid from "./BenchmarkGrid";
 import SiteLink from "./SiteLink";
 type Benchmark = {
@@ -21,11 +22,13 @@ type Benchmark = {
 
 export default function BenchmarkFigure({
   benchmark,
+  glass = false,
 }: {
   benchmark: Benchmark;
+  glass?: boolean;
 }) {
   return (
-    <figure className="benchmark">
+    <figure className={`benchmark${glass ? ` ${styles.glass}` : ""}`}>
       {benchmark.grid && <BenchmarkGrid variant="secondary" />}
       <div className="figure-top">
         <span className="eyebrow">{benchmark.label}</span>

@@ -176,7 +176,7 @@ export function FeaturedEngineering({
           </SiteLink>
           </div>
         </div>
-        <BenchmarkFigure benchmark={c.project.decodeBenchmark} />
+        <BenchmarkFigure benchmark={c.project.decodeBenchmark} glass />
       </div>
     </section>
   );

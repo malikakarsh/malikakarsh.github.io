@@ -1,0 +1,8 @@
+:global(.featured-grid) > .glass {
+  background: linear-gradient(125deg, #15231bcc, #0d1712dc);
+  border: 1px solid #b4d5b532;
+  border-radius: 7px;
+  box-shadow: 0 12px 44px #0005, 0 -1px 0 #d5f6c70a;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
